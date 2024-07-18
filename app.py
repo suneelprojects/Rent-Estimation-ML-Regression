@@ -80,7 +80,7 @@ if st.button("EstimateRent"):
     
     # Onehot Encoding
     row_ohe = ohe.transform(row[['City','AreaType']]).toarray()
-    row_ohe = pd.DataFrame(row_ohe, columns=ohe.get_feature_names_out())
+    row_ohe = pd.DataFrame(row_ohe, columns=ohe.get_feature_names())
     
     row = pd.concat([row.iloc[:, 2:], row_ohe], axis=1)
     
